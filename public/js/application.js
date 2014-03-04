@@ -6,8 +6,6 @@ $(document).ready(function() {
 
     var data = {tweet: $("#tweet").val()}
 
-    console.log(data)
-
     $.post('/tweet', data, function(serverResponse){
 
       $(".container").empty();
