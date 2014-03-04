@@ -1,8 +1,10 @@
 get '/' do
-  # Look in app/views/index.erb
+  @tweeted = false
   erb :index
 end
 
 post '/tweet' do
   $client.update(params[:tweet])
+  @tweeted = true
+  erb :index, layout: !request.xhr
 end
